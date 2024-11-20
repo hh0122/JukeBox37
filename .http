@@ -1,0 +1,56 @@
+@host=http://localhost:3000
+
+### Get all users
+GET {{host}}/users
+Content-Type: application/json
+
+---
+
+### Get single user
+GET {{host}}/users/3
+Content-Type: application/json
+
+---
+
+### Add new playlist
+POST {{host}}/users/3/playlists
+Content-Type: application/json
+
+{
+  "name": "Playlist Foobar",
+  "description": "It's a new playlist!"
+}
+
+---
+
+### Get all playlists
+GET {{host}}/playlists
+Content-Type: application/json
+
+---
+
+### Get single playlist by ID
+GET {{host}}/playlists/2
+Content-Type: application/json
+
+---
+
+### Add tracks to playlist
+POST {{host}}/playlists/2/tracks
+Content-Type: application/json
+
+{
+  "trackIds": [1, 2, 3]
+}
+
+---
+
+### Get all tracks
+GET {{host}}/tracks
+Content-Type: application/json
+
+---
+
+### Get single track by ID
+GET {{host}}/tracks/5
+Content-Type: application/json
